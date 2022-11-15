@@ -13,7 +13,7 @@ jobs:
         run: redis-cli ping
         
     services:
-      postgres:
+      LOCAL:
         image: redis
         ports:
           - 6379:6379
