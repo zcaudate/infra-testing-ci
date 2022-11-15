@@ -5,12 +5,10 @@ on: push
 jobs:
   run-test:
     runs-on: ubuntu-latest
-    container:
-      image: redis
     
     steps:
       - name: Running Tests
-        run: redis-cli -h LOCAL ping
+        run: docker run --network "host" redis redis-cli ping
         
     services:
       LOCAL:
