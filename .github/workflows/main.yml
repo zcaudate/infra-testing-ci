@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - name: Running Tests
-        run: redis-cli ping
+        run: redis-cli -h LOCAL ping
         
     services:
       LOCAL:
