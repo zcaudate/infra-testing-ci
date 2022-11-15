@@ -1,0 +1,19 @@
+name: build
+
+on: push
+
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    container:
+      image: redis
+    
+    steps:
+      - name: Running Tests
+        run: redis-cli ping
+        
+    services:
+      postgres:
+        image: redis
+        ports:
+          - 6379:6379
